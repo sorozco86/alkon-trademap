@@ -1,0 +1,8 @@
+{
+  "name": "alkon-trademap",
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {"dev":"netlify dev", "build":"echo 'static build'"},
+  "dependencies": {"@netlify/blobs":"^8.2.0"},
+  "devDependencies": {"netlify-cli":"^17.38.1"}
+}
