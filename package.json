@@ -1,1 +1,0 @@
-{"scripts":{"start":"netlify dev","build":"echo static"},"dependencies":{"@netlify/blobs":"latest"},"devDependencies":{"netlify-cli":"latest"}}
