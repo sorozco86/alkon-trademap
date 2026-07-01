@@ -1,14 +1,13 @@
 [build]
   publish = "public"
   functions = "netlify/functions"
-  command = "npm run build"
+
+[[redirects]]
+  from = "/api/auth"
+  to = "/.netlify/functions/auth"
+  status = 200
 
 [[redirects]]
   from = "/api/visits"
   to = "/.netlify/functions/visits"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
   status = 200

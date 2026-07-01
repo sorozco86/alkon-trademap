@@ -1,24 +1,25 @@
-# ALKON TradeMap Simple
+# ALKON TradeMap v1
 
-Aplicación web responsive para publicar en Netlify.
+App web responsive para administrar visitas comerciales del canal ferretero.
 
-## Qué incluye
-- 200 empresas importadas desde el Excel.
-- Mapa interactivo con puntos.
-- Heatmap.
-- Filtros por prioridad y estado.
-- Registro de visita con vendedor, observaciones, GPS y foto desde cámara del celular.
-- Guardado compartido usando Netlify Functions + Netlify Blobs.
-- Exportación CSV.
+## Login inicial
+- Usuario: `admin`
+- Contraseña: `alkon2026`
 
-## Cómo subir
-1. Subir todo este contenido a GitHub.
+## Estructura
+- `public/index.html`: app principal
+- `public/js/app.js`: lógica frontend
+- `public/css/styles.css`: estilos
+- `public/data/clients.json`: base inicial de clientes
+- `netlify/functions/auth.js`: login y usuarios
+- `netlify/functions/visits.js`: guardado de visitas
+
+## Deploy
+1. Subir todo el contenido de esta carpeta a GitHub.
 2. Conectar el repo en Netlify.
-3. Build command: `npm run build`.
-4. Publish directory: `public`.
-5. Functions directory: `netlify/functions`.
+3. Build command: `npm run build`
+4. Publish directory: `public`
+5. Functions directory: `netlify/functions`
 
-## Importante
-Las coordenadas son aproximadas por provincia/ciudad porque el Excel no tiene dirección exacta ni lat/long. Cuando tengamos direcciones, se pueden geocodificar y reemplazar.
-
-No incluye login complejo. Para operar simple, cada vendedor ingresa su nombre al abrir la web.
+## Nota
+El Excel original no hace falta subirlo. La app usa `public/data/clients.json`.
