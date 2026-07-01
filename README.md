@@ -1,42 +1,24 @@
-# ALKON TradeMap v2
+# ALKON TradeMap Simple
 
-Aplicación CRM ferretera para Netlify con:
-- Login por usuario/PIN y roles: admin, supervisor, vendedor.
-- Mapa interactivo con puntos y mapa de calor.
-- Registro de visitas por cliente.
-- Foto desde cámara del celular (`capture=environment`).
-- GPS de visita.
-- Guardado real en Netlify Blobs mediante Netlify Functions.
-- Dashboard ejecutivo y exportación CSV.
+Aplicación web responsive para publicar en Netlify.
 
-## Deploy rápido
-1. Subir este ZIP a un repositorio o arrastrar la carpeta a Netlify.
-2. En Netlify, confirmar:
-   - Publish directory: `public`
-   - Functions directory: `netlify/functions`
-3. Ejecutar deploy.
+## Qué incluye
+- 200 empresas importadas desde el Excel.
+- Mapa interactivo con puntos.
+- Heatmap.
+- Filtros por prioridad y estado.
+- Registro de visita con vendedor, observaciones, GPS y foto desde cámara del celular.
+- Guardado compartido usando Netlify Functions + Netlify Blobs.
+- Exportación CSV.
 
-## Usuarios demo
-- admin / `admin123`
-- sup-centro / `centro123`
-- vend-amba / `amba123`
-- vend-cba / `cba123`
+## Cómo subir
+1. Subir todo este contenido a GitHub.
+2. Conectar el repo en Netlify.
+3. Build command: `npm run build`.
+4. Publish directory: `public`.
+5. Functions directory: `netlify/functions`.
 
-## Recomendado antes de uso real
-En Netlify > Site configuration > Environment variables, agregar:
+## Importante
+Las coordenadas son aproximadas por provincia/ciudad porque el Excel no tiene dirección exacta ni lat/long. Cuando tengamos direcciones, se pueden geocodificar y reemplazar.
 
-`JWT_SECRET`: una clave larga aleatoria.
-
-`USERS_JSON`: JSON con usuarios reales. Ejemplo:
-
-```json
-[
-  {"id":"admin","name":"Sebastián Orozco","role":"admin","region":"Nacional","pin":"PIN-SEGURO"},
-  {"id":"juan","name":"Juan Pérez","role":"vendedor","region":"AMBA","pin":"1234"}
-]
-```
-
-## Notas
-- La foto se guarda como Data URL en Netlify Blobs y se sirve por función `photo-view`.
-- Para producción avanzada conviene migrar usuarios a Supabase/Auth0 o Netlify Identity.
-- La base de clientes está en `public/data.js`; puede reemplazarse por otra base exportada desde Excel.
+No incluye login complejo. Para operar simple, cada vendedor ingresa su nombre al abrir la web.

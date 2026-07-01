@@ -1,8 +1,17 @@
 {
-  "name": "alkon-trademap",
-  "version": "2.0.0",
-  "type": "module",
-  "scripts": {"dev":"netlify dev", "build":"echo 'static build'"},
-  "dependencies": {"@netlify/blobs":"^8.2.0"},
-  "devDependencies": {"netlify-cli":"^17.38.1"}
+  "name": "alkon-trademap-simple",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CRM web simple para visitas comerciales con mapa, foto y GPS",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Static app - no build needed'",
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^9.1.2"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
 }
